@@ -37,7 +37,9 @@
 </a>
 {%- endif %}
 <br>
-<br>
+{% if args.pasta_title %}
+<h3> {{pasta.title_as_string()}} </h3>
+{%- endif %}
 {% if pasta.content != "No Text Content" %}
 <div class="code-container">
   <div style="clear: both;">
