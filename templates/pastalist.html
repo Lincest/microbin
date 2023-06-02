@@ -15,9 +15,14 @@
     <table style="width: 100%">
         {% endif %}
         <thead>
-            <th style="width: 30%">
+            <th style="width: 20%">
                 Key
             </th>
+            {% if args.pasta_title %}
+            <th style="width: 10%">
+                Title
+            </th>
+            {%- endif %}
             <th style="width: 20%">
                 Created
             </th>
@@ -34,6 +39,11 @@
                 <td>
                     <a href="{{ args.public_path }}/pasta/{{pasta.id_as_animals()}}">{{pasta.id_as_animals()}}</a>
                 </td>
+                {% if args.pasta_title %}
+                <td>
+                    {{pasta.title_as_string()}}
+                </td>
+                {%- endif %}
                 <td>
                     {{pasta.created_as_string()}}
                 </td>
@@ -64,9 +74,14 @@
         <table style="width: 100%">
             {% endif %}
             <thead>
-                <th style="width: 30%">
+                <th style="width: 20%">
                     Key
                 </th>
+                {% if args.pasta_title %}
+                <th style="width: 10%">
+                    Title
+                </th>
+                {%- endif %}
                 <th style="width: 20%">
                     Created
                 </th>
@@ -82,6 +97,11 @@
                 <td>
                     <a href="{{ args.public_path }}/pasta/{{pasta.id_as_animals()}}">{{pasta.id_as_animals()}}</a>
                 </td>
+                {% if args.pasta_title %}
+                <td>
+                    {{pasta.title_as_string()}}
+                </td>
+                {%- endif %}
                 <td>
                     {{pasta.created_as_string()}}
                 </td>

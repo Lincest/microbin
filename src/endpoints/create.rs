@@ -72,6 +72,7 @@ pub async fn create(
     let mut new_pasta = Pasta {
         id: rand::thread_rng().gen::<u16>() as u64,
         content: String::from("No Text Content"),
+        title: String::from(""),
         file: None,
         extension: String::from(""),
         private: false,
@@ -120,6 +121,16 @@ pub async fn create(
                     };
                 }
 
+                continue;
+            }
+            "title" => {
+                let mut title = String::from("");
+                while let Some(chunk) = field.try_next().await? {
+                    title.push_str(std::str::from_utf8(&chunk).unwrap().to_string().as_str());
+                }
+                if !title.is_empty() {
+                    new_pasta.title = title;
+                }
                 continue;
             }
             "content" => {

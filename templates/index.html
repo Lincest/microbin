@@ -172,6 +172,10 @@
             {%- endif %}
         </div>
     </div>
+    {% if args.pasta_title %}
+    <label>Title</label>
+    <input style="width: 100%; margin-bottom: 2em" type="text" name="title" />
+    {%- endif %}
     <label>Content</label>
     <textarea style="width: 100%; min-height: 100px; margin-bottom: 2em" name="content" autofocus></textarea>
     <div style="overflow:auto;">

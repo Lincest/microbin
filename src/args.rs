@@ -95,6 +95,10 @@ pub struct Args {
 
     #[clap(long, env = "MICROBIN_HASH_IDS")]
     pub hash_ids: bool,
+
+    // feature: add title for pasta
+    #[clap(long, env = "MICROBIN_PASTA_TITLE")]
+    pub pasta_title: bool,
 }
 
 #[derive(Debug, Clone)]

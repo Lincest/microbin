@@ -35,6 +35,7 @@ impl PastaFile {
 #[derive(Serialize, Deserialize)]
 pub struct Pasta {
     pub id: u64,
+    pub title: String,
     pub content: String,
     pub file: Option<PastaFile>,
     pub extension: String,
@@ -66,6 +67,14 @@ impl Pasta {
             date.hour(),
             date.minute(),
         )
+    }
+
+    pub fn title_as_string(&self) -> String {
+        if self.title.is_empty() {
+            String::from("Untitled")
+        } else {
+            self.title.clone()
+        }
     }
 
     pub fn expiration_as_string(&self) -> String {
